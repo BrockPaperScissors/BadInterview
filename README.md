@@ -2,9 +2,13 @@
 
     Bad Interview is a practice tool to use for preparing before that next interview! Bad Interview may be the tool you didn't even know you needed.
 
+## Link To The App:
+
 ### Preview
 
 ## Getting Started:
+
+    To get started with Bad Interview, head to the browser linked above and hit "New Session"! Enter the amount of questions you would like to see in your mock interview, and give your session a unique name to find it later! Once you hit the submit button, your mock interview will begin. If you wish to see all the questions on a specific subject, use the links along the left side of the home page.
 
 ## MVP Goals:
 
@@ -37,14 +41,36 @@ The user arrives at the Bad Interview homepage. The user will see on the left, a
 
 If the user selects solo, they will name their session, and then they will then input how many questions they would like to see in the session. Each question will have a timer will have a 60 second timer (subject to change based on difficulty). When the timer reaches 0, it will move to the next question. The user will input their answer into the text field and hit next question. When the session ends, they will see their list of questions and answers and be able to access them at any point in time using the URL path to their session.
 
-## Link To The App:
-
 ## Technologies Used:
+
+-React.js  
+-Redux  
+-Python  
+-Django  
+-Node.js  
+-AJAX
 
 ## Wireframes:
 
+### Homepage
+
+![homepage](https://i.imgur.com/Ld6na9V.png)
+
+### Questions by Subject
+
+![subjects](https://i.imgur.com/PyWZl0u.png)
+
+### View of Interview Session
+
+![session](https://i.imgur.com/hDRKGP6.png)
+
 ## Stretch Goals:
 
+-Add a "duo" session
+-Create a Bad Interview game mode.
+
 ## A little Extra:
+
+My initial vision for this app was to make a party game intended for groups of players using video chat services. I decided to keep it simple initially, and make the game mode a goal for the future. The route I decided to take was to make a tool to help practice for job interviewing. I will use this app to upload questions I am asked during my job search so that I can practice the tough ones. The goal of this app is to help improve the ability to think and construct well thought out reponses while in the spotlight of an interviewer. Hopefully users of this app will have less "umm's, uhh's, and hmmm's" in their future interviews!
 
 ## Sources:
