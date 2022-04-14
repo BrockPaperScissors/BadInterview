@@ -1,17 +1,8 @@
-import QuestionForm from '../QuestionForm/QuestionForm';
-
 export default function QuestionCard() {
 	return (
 		<div>
-			<div>
-				<h2>Question #:</h2>
-			</div>
-			<div>
-				<QuestionForm />
-			</div>
-			<div>
-				<h2>TIMER:</h2>
-			</div>
+			<h2>Question: What is your name?</h2>
+			<textarea row='3' col='25' />
 		</div>
 	);
 }

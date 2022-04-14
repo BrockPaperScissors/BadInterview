@@ -9,22 +9,40 @@ import {
 	Navigate,
 	Redirect,
 } from 'react-router-dom';
-import Home from './components/Home/Home';
+
 import QuestionSubject from './components/QuestionSubject/QuestionSubject';
 import Session from './components/Session/Session';
 import SessionReview from './components/SessionReview/SessionReview';
+import Nav from './components/Nav/Nav';
+import NewSession from './components/NewSession/NewSession';
+import SessionList from './containers/SessionList';
 
 function App() {
+	let sessionId = '';
 	return (
-		<div>
-			<Home />
-			<Routes>
-				{/* <Route path='/' element={<Home />} /> */}
-				<Route path='/questions/:id' element={<QuestionSubject />} />
-				<Route path='/sessions/:id' element={<Session />} />
-				<Route path='/review/session/:id' element={<SessionReview />} />
-			</Routes>
-		</div>
+		<>
+			{/* <SessionList /> */}
+			<header>
+				<div>
+					<Link to='/'>
+						<h1>BAD INTERVIEW</h1>
+					</Link>
+				</div>
+			</header>
+			<div>
+				<Routes>
+					<Route path='/' element={<Nav />}>
+						<Route path='/' element={<NewSession />} />
+						<Route path='/questions/:subject' element={<QuestionSubject />} />
+					</Route>
+					<Route path='/sessions/:id' element={<Session />} />
+					<Route path='/review/session/:id' element={<SessionReview />} />
+				</Routes>
+			</div>
+			<footer>
+				<nav>Links/Information</nav>
+			</footer>
+		</>
 	);
 }
 
