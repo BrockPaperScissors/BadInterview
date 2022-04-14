@@ -44,11 +44,11 @@ If the user selects solo, they will name their session, and then they will then 
 ## Technologies Used:
 
 -React.js  
+-AJAX  
 -Redux  
--Python  
--Django  
 -Node.js  
--AJAX
+-Express.js  
+-MongoDB
 
 ## Wireframes:
 
@@ -66,7 +66,7 @@ If the user selects solo, they will name their session, and then they will then 
 
 ## Stretch Goals:
 
--Add a "duo" session
+-Add a "duo" session  
 -Create a Bad Interview game mode.
 
 ## A little Extra:
