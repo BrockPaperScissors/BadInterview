@@ -1,5 +1,5 @@
-import React from 'react';
-import { Counter } from './features/counter/Counter';
+import React, { useState } from 'react';
+
 import './App.css';
 import {
 	Routes,
@@ -15,13 +15,17 @@ import Session from './components/Session/Session';
 import SessionReview from './components/SessionReview/SessionReview';
 import Nav from './components/Nav/Nav';
 import NewSession from './components/NewSession/NewSession';
-import SessionList from './containers/SessionList';
+import SubmitQuestion from './components/SubmitQuestion/SubmitQuestion';
+// import SessionList from './containers/SessionList';
+// import SessionDetail from './containers/SessionDetails';
 
 function App() {
 	let sessionId = '';
 	return (
 		<>
-			{/* <SessionList /> */}
+			{/* <SessionList />
+			<hr />
+			<SessionDetail /> */}
 			<header>
 				<div>
 					<Link to='/'>
@@ -37,6 +41,7 @@ function App() {
 					</Route>
 					<Route path='/sessions/:id' element={<Session />} />
 					<Route path='/review/session/:id' element={<SessionReview />} />
+					<Route path='/questions/submit' element={<SubmitQuestion />} />
 				</Routes>
 			</div>
 			<footer>
