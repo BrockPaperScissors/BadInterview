@@ -35,6 +35,9 @@ export default function Nav() {
 				<Link to='/questions/algorithms'>
 					<li>Algorithms</li>
 				</Link>
+				<Link to='/questions/submit'>
+					<button>Submit an interview question!</button>
+				</Link>
 			</nav>
 			<Outlet />
 		</div>
