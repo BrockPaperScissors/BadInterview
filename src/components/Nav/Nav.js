@@ -1,7 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 
 export default function Nav() {
-	let sessionId = '';
 	return (
 		<div>
 			<nav>
