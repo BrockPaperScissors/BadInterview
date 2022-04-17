@@ -7,8 +7,6 @@ export default function SessionSetup() {
 	const { session, setSession, questions, setQuestions } =
 		useContext(SessionContext);
 	const navigate = useNavigate();
-	let randQuestions = [];
-	let newArray;
 
 	function generateSessionID() {
 		let newId = Math.floor(Math.random() * 100000000 + 10000000);
@@ -25,12 +23,10 @@ export default function SessionSetup() {
 	}
 
 	useEffect(() => {
-		// console.log('session updated!', session);
 		if (session.sessionId > 0) {
 			axios
 				.get('https://badinterviewapi.herokuapp.com/questions')
 				.then((res) => {
-					// console.log(res.data);
 					setQuestions(res.data);
 				})
 				.then(() => {
@@ -45,10 +41,6 @@ export default function SessionSetup() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		generateSessionID();
-
-		// console.log(questions);
-
-		// console.log('submitted!', session);
 	}
 	return (
 		<div>
