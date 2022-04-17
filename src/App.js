@@ -27,13 +27,18 @@ function App() {
 		sessionId: 0,
 		sessionName: '',
 		numQuestions: 0,
-		sessionQuestions: [''],
-		sessionResponses: [''],
+		sessionQuestions: [],
+		sessionResponses: [],
 	});
 
 	return (
 		<SessionContext.Provider
-			value={{ session, setSession, questions, setQuestions }}>
+			value={{
+				session,
+				setSession,
+				questions,
+				setQuestions,
+			}}>
 			<>
 				<header>
 					<div>
