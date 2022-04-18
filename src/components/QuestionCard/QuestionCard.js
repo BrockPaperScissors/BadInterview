@@ -75,11 +75,10 @@ export default function QuestionCard() {
 							</form>
 						</div>
 					))}
-				{/* {responseArray.length === session.sessionQuestions.length && ( */}
+
 				<div className='question-finish'>
 					<button onClick={handleFinish}>FINISH</button>
 				</div>
-				{/* )} */}
 			</div>
 		</>
 	);
