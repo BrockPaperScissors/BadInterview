@@ -40,29 +40,42 @@ function App() {
 				setQuestions,
 			}}>
 			<>
-				<header>
-					<div>
+				<div className='home'>
+					<header className='home-header'>
+						<div className='home-title-container'>
+							<Link to='/'>
+								<h1 className='home-title'>BAD INTERVIEW</h1>
+							</Link>
+						</div>
+					</header>
+					<main className='home-main'>
+						<div className='home-routes-container'>
+							<Routes>
+								<Route path='/' element={<Nav />}>
+									<Route path='/' element={<NewSession />} />
+									<Route
+										path='/questions/:subject'
+										element={<QuestionSubject />}
+									/>
+								</Route>
+
+								<Route path='/questions' element={<QuestionList />} />
+								<Route path='/sessions/:id' element={<QuestionCard />} />
+								<Route path='/review/session/:id' element={<SessionReview />} />
+								<Route path='/questions/submit' element={<SubmitQuestion />} />
+								<Route
+									path='/sessions/sessionsetup'
+									element={<SessionSetup />}
+								/>
+							</Routes>
+						</div>
+					</main>
+					<footer className='home-footer'>
 						<Link to='/'>
-							<h1>BAD INTERVIEW</h1>
+							<nav className='home-nav'>Links/Information</nav>
 						</Link>
-					</div>
-				</header>
-				<div>
-					<Routes>
-						<Route path='/' element={<Nav />}>
-							<Route path='/' element={<NewSession />} />
-							<Route path='/questions/:subject' element={<QuestionSubject />} />
-						</Route>
-						<Route path='/questions' element={<QuestionList />} />
-						<Route path='/sessions/:id' element={<QuestionCard />} />
-						<Route path='/review/session/:id' element={<SessionReview />} />
-						<Route path='/questions/submit' element={<SubmitQuestion />} />
-						<Route path='/sessions/sessionsetup' element={<SessionSetup />} />
-					</Routes>
+					</footer>
 				</div>
-				<footer>
-					<nav>Links/Information</nav>
-				</footer>
 			</>
 		</SessionContext.Provider>
 	);
