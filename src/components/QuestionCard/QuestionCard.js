@@ -43,6 +43,10 @@ export default function QuestionCard() {
 
 	function handleFinish() {
 		setSession({ ...session, sessionResponses: responseArray });
+
+		setTimeout(() => {
+			navigate(`/review/session/${session.sessionId}`);
+		}, 2000);
 	}
 
 	return (
