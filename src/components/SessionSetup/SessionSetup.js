@@ -7,6 +7,7 @@ export default function SessionSetup() {
 	const { session, setSession, questions, setQuestions } =
 		useContext(SessionContext);
 	const navigate = useNavigate();
+	const [errorState, setErrorState] = useState(false);
 
 	function generateSessionID() {
 		let newId = Math.floor(Math.random() * 100000000 + 10000000);
@@ -34,6 +35,7 @@ export default function SessionSetup() {
 				})
 				.catch((error) => {
 					console.log(error);
+					setErrorState(true);
 				});
 		}
 	}, [session.sessionId]);
@@ -44,7 +46,7 @@ export default function SessionSetup() {
 	}
 	return (
 		<div>
-			{/* discuss this */}
+			{errorState && <div>ISSUE WITH NETWORK REQUEST, TRY LATER</div>}
 			<form action='' onSubmit={handleSubmit}>
 				<div>
 					<label htmlFor='numQuestions'>Select an amount of questions:</label>
