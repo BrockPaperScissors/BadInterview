@@ -22,7 +22,7 @@ export default function SessionReview() {
 
 	return (
 		<>
-			<div>
+			<div className='review'>
 				{session &&
 					session.sessionQuestions.map((sessionQuestions, index) => (
 						<div key={index}>
@@ -31,9 +31,11 @@ export default function SessionReview() {
 								<h2 className='review-subject'>
 									Subject: {sessionQuestions.subject}
 								</h2>
-								<h3 className='review-question'>{sessionQuestions.body}</h3>
+								<h3 className='review-question'>
+									Interviewer: {sessionQuestions.body}
+								</h3>
 								<p className='review-response'>
-									Response: {session.sessionResponses[index]}
+									Your response: {session.sessionResponses[index]}
 								</p>
 							</div>
 						</div>

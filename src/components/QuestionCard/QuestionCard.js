@@ -51,17 +51,17 @@ export default function QuestionCard() {
 
 	return (
 		<>
-			<div>
+			<div className='question'>
 				{session &&
 					session.sessionQuestions.map((question, index) => (
-						<div key={index}>
-							<div>
-								<h1>Question: {index + 1}</h1>
+						<div key={index} className='question-container'>
+							<div className='question-card-header'>
+								<h1 id='Q'>Question: {index + 1}</h1>
 								<h2>Subject: {question.subject}</h2>
-								<p> {question.body}</p>
+								<p>Interviewer: {question.body}</p>
 							</div>
-							<form action='' onSubmit={handleSubmit}>
-								<div>
+							<form action='' onSubmit={handleSubmit} className='question-form'>
+								<div className='question-input'>
 									<textarea
 										row='3'
 										col='25'
@@ -76,7 +76,7 @@ export default function QuestionCard() {
 						</div>
 					))}
 				{/* {responseArray.length === session.sessionQuestions.length && ( */}
-				<div>
+				<div className='question-finish'>
 					<button onClick={handleFinish}>FINISH</button>
 				</div>
 				{/* )} */}

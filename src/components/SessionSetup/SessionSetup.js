@@ -4,6 +4,7 @@ import axios from 'axios';
 import { SessionContext } from '../../App.js';
 
 export default function SessionSetup() {
+	let [startNum, setStartNum] = useState();
 	const { session, setSession, questions, setQuestions } =
 		useContext(SessionContext);
 	const navigate = useNavigate();
@@ -45,16 +46,20 @@ export default function SessionSetup() {
 		generateSessionID();
 	}
 	return (
-		<div>
+		<div className='session-review'>
 			{errorState && <div>ISSUE WITH NETWORK REQUEST, TRY LATER</div>}
-			<form action='' onSubmit={handleSubmit}>
+			<form
+				action=''
+				onSubmit={handleSubmit}
+				className='session-review-container'>
 				<div>
 					<label htmlFor='numQuestions'>Select an amount of questions:</label>
 					<input
 						onChange={handleChange}
 						list='amountValue'
-						value={session.numQuestions}
+						value={startNum}
 						id='numQuestions'
+						placeholder='Select number of questions'
 						required
 					/>
 					<datalist id='amountValue'>
