@@ -2,8 +2,8 @@ import { Link, Outlet } from 'react-router-dom';
 
 export default function Nav() {
 	return (
-		<div>
-			<nav>
+		<div className='nav-container'>
+			<nav className='nav-nav'>
 				<Link to='/questions'>
 					<li>All Questions</li>
 				</Link>
