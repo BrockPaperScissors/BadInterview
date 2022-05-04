@@ -1,41 +1,41 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from "react-router-dom";
 
 export default function Nav() {
 	return (
-		<div className='nav-container'>
-			<nav className='nav-nav'>
-				<Link to='/questions'>
+		<div className="nav-container">
+			<nav className="nav-nav">
+				<Link to="/questions">
 					<li>All Questions</li>
 				</Link>
-				<Link to='/questions/bq'>
+				<Link to="/questions/bq">
 					<li>Behavioral Questions</li>
 				</Link>
-				<Link to='/questions/gcc'>
+				<Link to="/questions/gcc">
 					<li>General Coding Concepts</li>
 				</Link>
-				<Link to='/questions/html'>
+				<Link to="/questions/html">
 					<li>HTML</li>
 				</Link>
-				<Link to='/questions/css'>
+				<Link to="/questions/css">
 					<li>CSS</li>
 				</Link>
-				<Link to='/questions/javascript'>
+				<Link to="/questions/javascript">
 					<li>JavaScript</li>
 				</Link>
-				<Link to='/questions/python'>
+				<Link to="/questions/python">
 					<li>Python</li>
 				</Link>
-				<Link to='/questions/react'>
+				<Link to="/questions/react">
 					<li>React</li>
 				</Link>
-				<Link to='/questions/datastructures'>
+				<Link to="/questions/datastructures">
 					<li>Data Structures</li>
 				</Link>
-				<Link to='/questions/algorithms'>
+				<Link to="/questions/algorithms">
 					<li>Algorithms</li>
 				</Link>
-				<Link to='/questions/submit'>
-					<button>Submit an interview question!</button>
+				<Link to="/questions/submit">
+					<button className="nav-button">Submit an interview question!</button>
 				</Link>
 			</nav>
 			<Outlet />

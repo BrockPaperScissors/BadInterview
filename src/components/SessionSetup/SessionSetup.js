@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
-import { SessionContext } from '../../App.js';
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { SessionContext } from "../../App.js";
 
 export default function SessionSetup() {
 	let [startNum, setStartNum] = useState();
@@ -27,7 +27,7 @@ export default function SessionSetup() {
 	useEffect(() => {
 		if (session.sessionId > 0) {
 			axios
-				.get('https://badinterviewapi.herokuapp.com/questions')
+				.get("https://badinterviewapi.herokuapp.com/questions")
 				.then((res) => {
 					setQuestions(res.data);
 				})
@@ -46,48 +46,51 @@ export default function SessionSetup() {
 		generateSessionID();
 	}
 	return (
-		<div className='session-review'>
+		<div className="session-review">
 			{errorState && <div>ISSUE WITH NETWORK REQUEST, TRY LATER</div>}
 			<form
-				action=''
+				action=""
 				onSubmit={handleSubmit}
-				className='session-review-container'>
+				className="session-review-container"
+			>
 				<div>
-					<label htmlFor='numQuestions'>Select an amount of questions:</label>
+					<label htmlFor="numQuestions">Select an amount of questions:</label>
 					<input
 						onChange={handleChange}
-						list='amountValue'
+						list="amountValue"
 						value={startNum}
-						id='numQuestions'
-						placeholder='Select number of questions'
+						id="numQuestions"
+						placeholder="Select number of questions"
 						required
 					/>
-					<datalist id='amountValue'>
-						<option value='1'></option>
-						<option value='2'></option>
-						<option value='3'></option>
-						<option value='4'></option>
-						<option value='5'></option>
-						<option value='6'></option>
-						<option value='7'></option>
-						<option value='8'></option>
-						<option value='9'></option>
-						<option value='10'></option>
+					<datalist id="amountValue">
+						<option value="1"></option>
+						<option value="2"></option>
+						<option value="3"></option>
+						<option value="4"></option>
+						<option value="5"></option>
+						<option value="6"></option>
+						<option value="7"></option>
+						<option value="8"></option>
+						<option value="9"></option>
+						<option value="10"></option>
 					</datalist>
 				</div>
 				<div>
-					<label htmlFor='sessionName'>Name your session:</label>
+					<label htmlFor="sessionName">Name your session:</label>
 					<input
-						type='text'
-						id='sessionName'
+						type="text"
+						id="sessionName"
 						onChange={handleChange}
 						value={session.sessionName}
-						placeholder='session name...'
+						placeholder="session name..."
 						required
 					/>
 				</div>
 
-				<button type='submit'>START</button>
+				<button type="submit" className="session-setup-button">
+					Start Session
+				</button>
 			</form>
 		</div>
 	);
