@@ -1,11 +1,12 @@
-import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { SessionContext } from '../../App';
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { SessionContext } from "../../App";
 export default function QuestionCard() {
 	let addQuestion = [];
 	let randomQuestions = [];
 	let responseArray = [];
+	let checkQuestion;
 	let navigate = useNavigate();
 
 	const { session, questions, setSession } = useContext(SessionContext);
@@ -15,18 +16,16 @@ export default function QuestionCard() {
 			addQuestion = [...session.sessionQuestions, ...questions];
 
 			while (randomQuestions.length < session.numQuestions) {
-				randomQuestions.push(
-					addQuestion[Math.floor(Math.random() * session.numQuestions)]
-				);
-				console.log(
-					addQuestion[Math.floor(Math.random() * session.numQuestions)]
-				);
+				checkQuestion = Math.floor(Math.random() * session.numQuestions);
 
-				console.log(randomQuestions);
+				if (randomQuestions.includes(addQuestion[checkQuestion])) {
+					checkQuestion = Math.floor(Math.random() * session.numQuestions);
+				} else {
+					randomQuestions.push(addQuestion[checkQuestion]);
+				}
 			}
 			setSession({ ...session, sessionQuestions: randomQuestions });
 		}
-		console.log(session.sessionResponses);
 	}, [questions]);
 
 	function handleSubmit(e) {
@@ -51,32 +50,32 @@ export default function QuestionCard() {
 
 	return (
 		<>
-			<div className='question'>
+			<div className="question">
 				{session &&
 					session.sessionQuestions.map((question, index) => (
-						<div key={index} className='question-container'>
-							<div className='question-card-header'>
-								<h1 id='Q'>Question: {index + 1}</h1>
+						<div key={index} className="question-container">
+							<div className="question-card-header">
+								<h1 id="Q">Question: {index + 1}</h1>
 								<h2>Subject: {question.subject}</h2>
 								<p>Interviewer: {question.body}</p>
 							</div>
-							<form action='' onSubmit={handleSubmit} className='question-form'>
-								<div className='question-input'>
+							<form action="" onSubmit={handleSubmit} className="question-form">
+								<div className="question-input">
 									<textarea
-										row='3'
-										col='25'
-										placeholder='Type your answer...'
+										row="3"
+										col="25"
+										placeholder="Type your answer..."
 										onChange={handleChange}
 										id={index}
 										required
 									/>
-									<button type='submit'>Submit</button>
+									<button type="submit">Submit</button>
 								</div>
 							</form>
 						</div>
 					))}
 
-				<div className='question-finish'>
+				<div className="question-finish">
 					<button onClick={handleFinish}>FINISH</button>
 				</div>
 			</div>
