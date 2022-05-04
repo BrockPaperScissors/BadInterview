@@ -8,9 +8,9 @@ https://bad-interview.vercel.app/
 
 ### Preview
 
-![Home Page](https://i.imgur.com/Ac1cFFZ.png)  
-![Session Setup](https://i.imgur.com/Q3T8KJL.png)
-![User Session](https://i.imgur.com/0tJtU8a.png)
+![Home Page](https://i.imgur.com/gunELbY.png)  
+![Session Setup](https://i.imgur.com/Q1MFXSW.png)
+![User Session](https://i.imgur.com/cmtgolQ.png)
 
 ## Getting Started:
 
